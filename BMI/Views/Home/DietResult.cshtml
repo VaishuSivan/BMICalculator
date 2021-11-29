@@ -1,0 +1,103 @@
+﻿@model BMI.Models.DietPlanModel
+
+@{
+    ViewBag.Title = "DietResult";
+}
+
+<h2>Result</h2>
+<p>
+    @Html.ActionLink("Convert View To PDF", "PrintViewToPdf")
+</p>
+
+<div>
+    <h4>DietPlanModel</h4>
+    <hr />
+
+    <dl class="dl-horizontal">
+        <table>
+            <tr>
+                <td>@ViewBag.Result</td>
+            </tr>
+            <tr>
+                <td>@ViewBag.Res</td>
+            </tr>
+            <tr>
+                <td>@ViewBag.option</td>
+            </tr>
+
+        </table>
+        <dt>
+            @Html.DisplayNameFor(model => model.EarlyMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EarlyMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Breakfast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Breakfast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MidMorning)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MidMorning)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lunch)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lunch)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Evening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Evening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MidEvening)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MidEvening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dinner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dinner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PostDinner)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PostDinner)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Workouts)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Workouts)
+        </dd>
+
+
+    </dl>
+</div>

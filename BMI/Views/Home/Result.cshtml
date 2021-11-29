@@ -1,0 +1,127 @@
+﻿@model BMI.Models.DietPlanModel
+
+@{
+    ViewBag.Title = "Result";
+}
+
+<h2 style="color: #000000;">Result</h2>
+
+
+<div>
+
+    <hr />
+    <div id="PrintPDF" style="color: #000000;">
+
+
+
+        <h3>@ViewBag.Result</h3>
+
+        <h3>Based on BMI Chart you are @ViewBag.Res</h3>
+        <h4><b>Diet and Workout Plan</b></h4>
+
+
+
+        <table border="1">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EarlyMorning)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.EarlyMorning)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Breakfast)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Breakfast)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MidMorning)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.MidMorning)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lunch)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Lunch)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Evening)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Evening)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MidEvening)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.MidEvening)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Dinner)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.Dinner)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PostDinner)
+                </th>
+
+                <td>
+                    @Html.DisplayFor(model => model.PostDinner)
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Workouts)
+                </th>
+
+                <td style="white-space: pre-line; font-size:small">
+                    @Html.DisplayFor(model => model.Workouts)
+                </td>
+            </tr>
+        </table>
+    </div>
+    <br />
+
+    @using (Html.BeginForm("Export", "Home", FormMethod.Post))
+    {
+        <input type="hidden" name="ExportData" />
+        <input type="submit" id="btnSubmit" value="Download Diet Plan" style="background-color: #000000; color: #FFFFFF;" /> <input type="button" value="Shop" style="background-color: #000000; color: #FFFFFF;" onclick="window.location='@Url.Action("Shop", "Home")'" />
+
+    }
+
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#btnSubmit").click(function () {
+             $("input[name='ExportData']").val($("#PrintPDF").html());
+            });
+        });
+    </script>
+
+</div>

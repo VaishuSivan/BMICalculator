@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BMI.Models.ShopModel>
+
+@{
+    ViewBag.Title = "Cart";
+}
+
+<h2>Order</h2>
+
+
+<table class="table" style="color:#000000;">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
+<h4>@ViewBag.msg</h4>
+<h4>@ViewBag.Sum</h4>
+<p>
+
+    @Html.ActionLink("Back to Shop", "Shop")
+</p>
+<div class="form-group">
+<div class="col-md-offset-2 col-md-10">
+    <input type="button" value="Place order" onclick="window.location='@Url.Action("PlaceOrder", "Home")'" style="background-color: #000000; color: #FFFFFF;" />
+</div>
+    </div>
